@@ -23,7 +23,7 @@ const WelcomeAction = () => {
                 return <p key={`${par}-${prm}`}>{par}</p>
             })}
             <div key="paw-b" className="actions-wrapper before">
-                <button onClick={() => dispatch(getCountries())}>Explore Countries</button>
+                <button onClick={() => dispatch(getCountries())}>Show Countries</button>
             </div>
         </motion.div>
     )

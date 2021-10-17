@@ -26,17 +26,15 @@ function* countDownSaga() {
   const chan = yield call(countdown, 15)
   try {    
     while (true) {
-      // take(END) will cause the saga to terminate by jumping to the finally block
-      // let seconds = yield take(chan)
-      // console.log(`countdown: ${seconds}`)
-      yield take(chan);
+      let seconds = yield take(chan);
+      if (seconds >= 14) {
+        yield spawn(fetchCountries)
+      }
     }
   } finally {
-    // console.log('countdown terminated');
     // Restart Counter
     yield spawn(countDownSaga)
     // Fetch next letter
-    yield spawn(fetchCountries)
   }
 }
 
