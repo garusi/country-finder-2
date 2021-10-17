@@ -35,6 +35,9 @@
       width: 100%;
       margin: 0;
       padding: 00;
+      &.modOpen {
+        overflow-y: hidden;
+      }
       li {
         height: 52px;
         border-bottom: 1px solid rgba(11, 178, 178, 0.2);

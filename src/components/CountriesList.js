@@ -46,7 +46,7 @@ const CountriesList = () => {
                         <Search />
                     </motion.div>
                     <div className="height-wrapper">
-                        <motion.ul id="countryList" className="countries-list" variants={loadingContainerVariants} initial="hidden" animate="visible" exit="hidden">
+                        <motion.ul id="countryList" className={`countries-list${selectedCountry ? ' modOpen' : ''}`} variants={loadingContainerVariants} initial="hidden" animate="visible" exit="hidden">
                             {countries.length >= 0 && countries.filter((country) => {
                                 if (searchInput.length === 0) {
                                     return country;
