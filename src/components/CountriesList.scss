@@ -26,8 +26,7 @@
   .height-wrapper {
     padding-block-start: 208px;
     height: calc(100vh - 192px - 5em);
-    // max-height: calc(100vh - 84px - 57px - 5em);
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
       .countries-list {
     overflow-y: scroll;
