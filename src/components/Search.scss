@@ -1,0 +1,58 @@
+@import "../variables.scss";
+
+
+.search-wrapper {
+    padding: 6px 24px;
+    z-index: 200;
+    width: calc(100% - 48px);
+    position: relative;
+    .clear {
+        padding: 2px 0;
+        font-size: 12px;
+        color: #21c2de;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+    .search-input {
+        width: 100%;
+        height: 45px;
+        border-radius: 3px;
+        letter-spacing: 1.5px;
+        color: #444;
+        font-size: 12px;
+        border: 1px solid #595364;
+        padding: 0 16px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        outline: none;
+    }
+    .search-suggestions-wrapper {
+        position: absolute;
+        top: 44px;
+        left: 24px;
+        width: calc(100% - 48px);
+        padding: 0;
+            background: white;
+            border: 1px solid rgba(11, 178, 178, 0.2);
+        .search-suggestion {
+            border-bottom: 1px solid rgba(11, 178, 178, 0.2);
+            cursor: pointer;
+            margin: 0;
+            color: $black;
+            text-decoration: none;
+            list-style: none;
+            padding: 12px 4px;
+            display: flex;
+            align-items: center;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:hover {
+                background: $primary-highlight;
+              }
+        }
+    }
+}

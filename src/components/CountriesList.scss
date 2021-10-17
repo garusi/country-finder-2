@@ -1,0 +1,113 @@
+@import "../variables.scss";
+
+.countries-list-wrapper {
+  margin: 0 auto;
+  position: relative;
+    overflow-y: hidden;
+    max-width: 1366px;
+    margin: 0 auto;
+    .actions-wrapper {
+      &.after {
+        margin: 0 auto;
+    max-width: 1366px;
+    position: relative;
+    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    z-index: 200;
+    border-bottom: 1px solid rgba(11, 178, 178, 0.2);
+    position: fixed;
+    top: 84px;
+    width: 100%;
+      }
+  }
+  .height-wrapper {
+    padding-block-start: 208px;
+    height: calc(100vh - 192px - 5em);
+    // max-height: calc(100vh - 84px - 57px - 5em);
+    overflow-x: hidden;
+    position: relative;
+      .countries-list {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+      margin: 0;
+      padding: 0;
+      li {
+        height: 52px;
+        border-bottom: 1px solid rgba(11, 178, 178, 0.2);
+        cursor: pointer;
+        margin: 0;
+        color: $black;
+        text-decoration: none;
+        list-style: none;
+        padding: 8px 24px;
+        display: flex;
+        align-items: center;
+        &:nth-child(odd) {
+          background: rgba(17, 222, 179, 0.03);
+        }
+  
+        &.FL {
+          position: relative;
+          margin-block-start: 84px;
+          &::before {
+            cursor: default;
+            content: attr(data-content);
+            text-transform: uppercase;
+            font-weight: 700;
+            position: absolute;
+            top: -84px;
+            left: 0;
+            z-index: 90;
+            width: -webkit-fill-available;
+            height: 84px;
+            display: flex;
+            padding: 0 24px;
+            align-items: center;
+            color: $primary-light;
+            border-bottom: 1px solid rgba(11, 178, 178, 0.2);
+            font-size: larger;
+          }
+        }
+        &:hover {
+          background: $primary-highlight;
+        }
+      }
+    }
+  }
+  
+  .status-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .loading,
+  .total {
+    z-index: 200;
+    font-size: small;
+    padding: 12px 24px;
+    color: $grey;
+    background: $white;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  .countries-list-wrapper {
+    .actions-wrapper {
+      &.after {
+        padding: 1em 0;
+      }
+    }
+    .height-wrapper {
+      padding-block-start: 176px;
+      height: calc(100vh - 176px - 3em);
+    }
+  }
+}

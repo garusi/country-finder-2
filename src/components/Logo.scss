@@ -1,0 +1,17 @@
+@import "../variables.scss";
+
+.logo-wrapper {
+  color: $white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-shadow: 0 0 2px $primary-highlight;
+  i {
+    padding-inline-end: 12px;
+  }
+  h1 {
+    margin: 0;
+    padding: 8px 0;
+    text-transform: uppercase;
+  }
+}

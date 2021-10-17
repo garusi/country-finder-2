@@ -1,0 +1,165 @@
+@import "../variables.scss";
+
+.overlaybox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 901;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(10, 10, 10, 0.75);
+  justify-content: center;
+  display: flex;
+  align-items: baseline;
+  overflow-y: scroll;
+  .country-details-wrapper {
+    max-width: 1080px;
+    text-align: center;
+    padding: 48px 32px;
+    margin: 48px auto;
+    width: calc(100% - 64px);
+    background: $white;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    .back-btn {
+      cursor: pointer;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 8px;
+      transition: all 0.2s ease-out 0s;
+      border-radius: 16px;
+      z-index:800 ;
+      i {
+        color: $grey;
+      }
+      &:hover {
+        i {
+          color: $primary;
+          transition: all 0.2s ease-in 0s;
+        }
+      }
+    }
+    .flag {
+      margin-block-start: 4em;
+      height: 120px;
+      width: 180px;
+      border-radius: 8px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid rgba(11, 178, 178, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .info-wrapper {
+      margin-block-start: 4em;
+      display: grid;
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      grid-template-columns: 2fr 2fr;
+
+      width: 100%;
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 4em 2em;
+        width: calc(100% - 4em);
+        border: solid rgba(11, 178, 178, 0.2);
+        border-width: 0 1px 1px 0;
+        &:nth-child(even) {
+          border-width: 0 0 1px 0;
+          &:last-child {
+            border-width: 0 0 0 0;
+          }
+        }
+        &:last-child {
+          border-width: 0 1px 0 0;
+        }
+        &:nth-last-child(2):not(.info:nth-child(even)) {
+          border-width: 0 1px 0 0;
+        }
+
+
+        
+        .info-category {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          label {
+            font-size: x-small;
+          }
+          i {
+            color: $primary-light;
+            padding: 4px;
+          }
+        }
+
+        .info-value {
+          color: $black;
+          font-weight: 700;
+          margin: 0.5em 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .overlaybox {
+    .country-details-wrapper {
+      .back-btn {
+        top: 12px;
+        left: 12px;
+      }
+      margin: 24px auto 0 auto;
+      .info-wrapper {
+      margin-block-start: 2em;
+      flex-direction: column;
+              display: flex;
+      align-items: space-between;
+      justify-content: center;
+        .info {
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-between;
+          padding: 1em 0;
+          border: solid rgba(11, 178, 178, 0.2);
+          border-width: 0 0 1px 0;
+          &:nth-child(even), &:nth-child(odd), &:nth-last-child(2) {
+            border-width: 0 0 1px 0;
+            }
+            &:nth-child(even), &:last-child, &:nth-last-child(2):not(.info:nth-child(even)) {
+              border-width: 0 0 1px 0;
+            }
+            &:last-child {
+              border-width: 0 0 0 0;
+            }
+            .info-category {
+              align-items: flex-start;
+              i {
+                font-size: 24px;
+              }
+            }
+        }
+      }
+    }
+  }
+}
