@@ -3,37 +3,38 @@
 .countries-list-wrapper {
   margin: 0 auto;
   position: relative;
-    overflow-y: hidden;
-    max-width: 1366px;
-    margin: 0 auto;
-    .actions-wrapper {
-      &.after {
-        margin: 0 auto;
-    max-width: 1366px;
-    position: relative;
-    padding: 2em 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    z-index: 200;
-    border-bottom: 1px solid rgba(11, 178, 178, 0.2);
-    position: fixed;
-    top: 84px;
-    width: 100%;
-      }
+  overflow: hidden;
+  max-width: 1366px;
+  margin: 0 auto;
+  height: -webkit-fill-available;
+  .actions-wrapper {
+    &.after {
+      margin: 0 auto;
+      max-width: 1366px;
+      position: relative;
+      padding: 2em 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      z-index: 200;
+      border-bottom: 1px solid rgba(11, 178, 178, 0.2);
+      position: fixed;
+      top: 84px;
+      width: 100%;
+    }
   }
   .height-wrapper {
     padding-block-start: 208px;
     height: calc(100vh - 192px - 5em);
     overflow: hidden;
     position: relative;
-      .countries-list {
-    overflow-y: scroll;
-    height: 100%;
-    width: 100%;
+    .countries-list {
+      overflow-y: scroll;
+      height: 100%;
+      width: 100%;
       margin: 0;
-      padding: 00 ;
+      padding: 00;
       li {
         height: 52px;
         border-bottom: 1px solid rgba(11, 178, 178, 0.2);
@@ -79,7 +80,7 @@
       }
     }
   }
-  
+
   .status-wrapper {
     display: flex;
     justify-content: space-between;

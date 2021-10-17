@@ -22,6 +22,10 @@ export const CountryDetails = () => {
         dispatch(clearCountry());
     }
 
+    function numberWithCommas(value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     // Country Details
     const countryInfo = [
         {
@@ -30,7 +34,7 @@ export const CountryDetails = () => {
             "icon": "home_work",
         }, {
             "label": "Population",
-            "value": country && country.population ? country.population : '-',
+            "value": country && country.population ? numberWithCommas(country.population) : '-',
             "icon": "groups",
         }, {
             "label": "Alpha2Code",
